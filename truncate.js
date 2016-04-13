@@ -12,6 +12,28 @@
 // 5. Add an additional String item to the Array to put an ellipses in: "..."
 // 6. Use the join() function to convert the Array back into a String
 // 7. Return the truncated String from the Function
+//add use strict to invoke strict mode
+"use strict"
+
+//Create a function, truncateWords, to accept the two arguments: longText and numWords
+var truncateWords = function(longText, numWords) {
+//Use the split function to create an array
+  var stringArray = longText.split(" ");
+//Find the length of the array
+  var stringArrayLength = stringArray.length;
+//Listed how to calculate the number of words to be removed from the array below but didn't use it
+  var numWordsToRemove = stringArrayLength - numWords;
+  console.log('Remove:' + numWordsToRemove);
+//Removed the words that were outside of the wordLimit with splice  
+  var shortenStringArray = stringArray.splice(0, numWords);  
+//Added ellipses to the shorten, spliced array at the end
+  shortenStringArray.splice(shortenStringArray.length, 0, '...');
+//Joined the shorten array
+  var truncateString = shortenStringArray.join(' '); 
+  
+  return truncateString;
+};
+
 
 // This portion of the script is meant to call and display the result of your Function.
 // You do not need to change the following lines, but you may change them if you 
